@@ -296,7 +296,7 @@
                                       {% for discount in item.discounts %}
                                         {% capture discount_html %}
                                           <div class="badge">
-                                            {%- render 'icon-discount' -%}
+                                            {%- render 'ds-icon-discount' -%}
                                             <span>{{ discount.title }} (-{{ item.original_price | minus: item.final_price | money }})</span>
                                           </div>
                                         {% endcapture %}
@@ -332,7 +332,7 @@
                                           <div class="cart-drawer__discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
                                             {%- for discount in item.discounts -%}
                                               <div class="badge">
-                                                {%- render 'icon-discount' -%}
+                                                {%- render 'ds-icon-discount' -%}
                                                 <span>{{ discount.title }}</span>
                                               </div>
                                             {%- endfor -%}
@@ -640,13 +640,13 @@
         {% for block in section.blocks %}
           {% case block.type %}
             {% when 'discount_field' %}
-              {% render 'cart-discount-field', block: block %}
+              {% render 'ds-cart-discount-field', block: block %}
             {% when 'cart_note' %}
               <details id="Details-CartDrawer" style="--margin-top: {{ block.settings.margin_top | divided_by: 10.0 }}rem;--margin-bottom: {{ block.settings.margin_bottom | divided_by: 10.0 }}rem;" {{ block.shopify_attributes }}>
                 <summary>
                   <span class="summary__title">
                     {{ 'sections.cart.note' | t }}
-                    {% render 'icon-caret' %}
+                    {% render 'ds-icon-caret' %}
                   </span>
                 </summary>
                 <cart-note class="cart__note field">
@@ -689,7 +689,7 @@
                       <span class='cart-drawer__discounts__label'>{{ block.settings.discounts_label }}</span>
                       {%- for discount in cart.cart_level_discount_applications -%}
                         <div class="badge">
-                          {%- render 'icon-discount' -%}
+                          {%- render 'ds-icon-discount' -%}
                           <span>{{ discount.title }} (-{{ discount.total_allocated_amount | money }})</span>
                         </div>
                       {%- endfor -%}

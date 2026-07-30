@@ -77,6 +77,17 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-shrink: 0;
+}
+
+/* Vùng nội dung giữa header và footer: co giãn và tự cuộn khi nhiều sản phẩm */
+.cart-drawer__body {
+  flex: 1 1 auto;
+  /* min-height:0 bắt buộc, nếu không flex item sẽ không thu nhỏ dưới kích thước nội dung */
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .drawer__heading {
@@ -107,6 +118,11 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
   width: 2.4rem;
 }
 
+/* Custom element mặc định là inline — cần block để layout flex bên trong hoạt động */
+cart-drawer-items {
+  display: block;
+}
+
 .drawer__contents {
   flex-grow: 1;
   display: flex;
@@ -117,6 +133,7 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
   background-color: rgb(var(--color-background));
   border-top: 0.1rem solid rgba(var(--color-foreground), 0.2);
   padding: 0 0 1.5rem;
+  flex-shrink: 0;
 }
 
 cart-drawer.is-empty .drawer__footer {
@@ -202,8 +219,9 @@ cart-drawer {
     overflow: visible;
   }
 
+  /* Màn hình thấp: vẫn chỉ cuộn trong .cart-drawer__body để header/footer luôn hiển thị */
   .drawer__inner {
-    overflow: scroll;
+    overflow: hidden;
   }
 }
 
@@ -456,11 +474,13 @@ cart-drawer {
   }
 }
 
-.cart-drawer-items-and-upsell::-webkit-scrollbar {
+.cart-drawer-items-and-upsell::-webkit-scrollbar,
+.cart-drawer__body::-webkit-scrollbar {
   width: 3px;
 }
 
-.cart-drawer-items-and-upsell::-webkit-scrollbar-thumb {
+.cart-drawer-items-and-upsell::-webkit-scrollbar-thumb,
+.cart-drawer__body::-webkit-scrollbar-thumb {
   background-color: rgba(var(--color-foreground), 0.7);
   border-radius: 100px;
 }

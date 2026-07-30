@@ -324,7 +324,7 @@
     </a>
 
     {%- if settings.cart_type == 'drawer' -%}
-      {%- render 'cart-drawer' -%}
+      {%- section 'cart-drawer' -%}
     {%- endif -%}
 
     {% sections 'header-group' %}
@@ -390,6 +390,13 @@
     {%- endif -%}
 
     {%- if settings.cart_type == 'drawer' -%}
+      {% comment %}
+        cart-drawer.js defines CartDrawerItems extends CartItems, so cart.js must load first.
+        On the cart page, main-cart-items.liquid already loads cart.js — skip to avoid double execution.
+      {% endcomment %}
+      {%- unless request.page_type == 'cart' -%}
+        <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+      {%- endunless -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
   </body>
