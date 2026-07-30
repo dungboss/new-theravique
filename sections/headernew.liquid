@@ -1,0 +1,1124 @@
+<style>
+  /* =====================================================
+     REMOVE DEFAULT CUSTOM LIQUID SPACING
+  ===================================================== */
+
+  #shopify-section-{{ section.id }} {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #shopify-section-{{ section.id }} > div,
+  #shopify-section-{{ section.id }} .custom-liquid,
+  #shopify-section-{{ section.id }} .page-width,
+  #shopify-section-{{ section.id }}
+  [class*="section-"][class*="-padding"] {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* =====================================================
+     HEADER VARIABLES
+  ===================================================== */
+
+  #tv-header-{{ section.id }} {
+    --announcement-bg: #17100c;
+    --header-bg: #2a1912;
+    --header-text: #f6efe7;
+    --header-muted: #c4b4a6;
+    --accent: #ddb36f;
+    --accent-hover: #ecd09f;
+    --header-border: #3d281f;
+
+    --drawer-bg: #f4ede3;
+    --drawer-text: #2a211c;
+    --drawer-muted: #74675e;
+    --drawer-border: #d9ccbc;
+
+    position: relative;
+    width: 100%;
+    font-family: inherit;
+  }
+
+  #tv-header-{{ section.id }} * {
+    box-sizing: border-box;
+  }
+
+  /* =====================================================
+     ANNOUNCEMENT BAR
+  ===================================================== */
+
+  #tv-header-{{ section.id }} .tv-announcement {
+    display: flex;
+    min-height: 32px;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 18px;
+
+    border-bottom: 1px solid rgba(221, 179, 111, 0.12);
+    background: var(--announcement-bg);
+    color: var(--header-text);
+
+    text-align: center;
+  }
+
+  #tv-header-{{ section.id }} .tv-announcement a {
+    color: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.035em;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  #tv-header-{{ section.id }} .tv-announcement a:hover {
+    color: var(--accent);
+  }
+
+  /* =====================================================
+     MAIN HEADER
+  ===================================================== */
+
+  #tv-header-{{ section.id }} .tv-header {
+    position: relative;
+
+    border-bottom: 1px solid var(--header-border);
+    background: var(--header-bg);
+
+    box-shadow: 0 2px 8px rgba(20, 12, 8, 0.12);
+  }
+
+  #tv-header-{{ section.id }} .tv-header__inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+
+    width: 100%;
+    max-width: 1240px;
+    min-height: 70px;
+
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 28px;
+
+    background: transparent;
+  }
+
+  /* =====================================================
+     DESKTOP NAVIGATION
+  ===================================================== */
+
+  #tv-header-{{ section.id }} .tv-header__nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    justify-self: start;
+  }
+
+  #tv-header-{{ section.id }} .tv-header__nav a {
+    position: relative;
+
+    color: var(--header-text);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.02em;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition: color 0.2s ease;
+  }
+
+  #tv-header-{{ section.id }} .tv-header__nav a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -9px;
+    left: 0;
+
+    height: 1px;
+    background: var(--accent);
+
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.2s ease;
+  }
+
+  #tv-header-{{ section.id }} .tv-header__nav a:hover {
+    color: var(--accent);
+  }
+
+  #tv-header-{{ section.id }} .tv-header__nav a:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* =====================================================
+     BRAND
+  ===================================================== */
+
+  #tv-header-{{ section.id }} .tv-header__brand {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+
+    color: var(--header-text);
+    text-decoration: none;
+  }
+
+  #tv-header-{{ section.id }} .tv-header__brand-name {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: 0.065em;
+  }
+
+  #tv-header-{{ section.id }} .tv-header__brand-small {
+    margin-top: 7px;
+
+    color: var(--accent);
+
+    font-family: Arial, sans-serif;
+    font-size: 7px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.36em;
+  }
+
+  /* =====================================================
+     HEADER ACTIONS
+  ===================================================== */
+
+  #tv-header-{{ section.id }} .tv-header__actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 14px;
+    justify-self: end;
+  }
+
+  #tv-header-{{ section.id }} .tv-header__icon {
+    position: relative;
+
+    display: inline-flex;
+    width: 36px;
+    height: 36px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    border: 0;
+    background: transparent;
+
+    color: var(--header-text);
+    cursor: pointer;
+    text-decoration: none;
+
+    transition:
+      color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  #tv-header-{{ section.id }} .tv-header__icon svg {
+    width: 21px;
+    height: 21px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.6;
+  }
+
+  #tv-header-{{ section.id }} .tv-header__icon:hover {
+    color: var(--accent);
+    transform: translateY(-1px);
+  }
+
+  #tv-header-{{ section.id }} .tv-cart-count {
+    position: absolute;
+    top: 0;
+    right: -1px;
+
+    display: flex;
+    min-width: 17px;
+    height: 17px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 4px;
+
+    border: 2px solid var(--header-bg);
+    border-radius: 999px;
+
+    background: var(--accent);
+    color: #22170f;
+
+    font-size: 9px;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  /* Badge co display:flex nen attribute hidden mac dinh
+     khong an duoc → phai ep display:none o day */
+  #tv-header-{{ section.id }} .tv-cart-count[hidden] {
+    display: none !important;
+  }
+
+  /* =====================================================
+     MOBILE MENU BUTTON
+  ===================================================== */
+
+  #tv-header-{{ section.id }} .tv-menu-button {
+    display: none;
+  }
+
+  /* =====================================================
+     MOBILE DRAWER
+  ===================================================== */
+
+  #tv-header-{{ section.id }} .tv-drawer-overlay {
+    position: fixed;
+    z-index: 101;
+    inset: 0;
+
+    visibility: hidden;
+
+    background: rgba(16, 9, 6, 0.62);
+    opacity: 0;
+
+    transition:
+      opacity 0.25s ease,
+      visibility 0.25s ease;
+  }
+
+  #tv-header-{{ section.id }} .tv-drawer {
+    position: fixed;
+    z-index: 102;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    width: min(86vw, 360px);
+    overflow-y: auto;
+
+    background: var(--drawer-bg);
+    color: var(--drawer-text);
+
+    box-shadow: 12px 0 38px rgba(0, 0, 0, 0.25);
+
+    transform: translateX(-105%);
+    transition: transform 0.28s ease;
+  }
+
+  #tv-header-{{ section.id }}.is-menu-open .tv-drawer-overlay {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  #tv-header-{{ section.id }}.is-menu-open .tv-drawer {
+    transform: translateX(0);
+  }
+
+  /* Drawer header */
+
+  #tv-header-{{ section.id }} .tv-drawer__top {
+    display: flex;
+    min-height: 72px;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 22px;
+
+    border-bottom: 1px solid var(--drawer-border);
+    background: #eadfce;
+  }
+
+  #tv-header-{{ section.id }} .tv-drawer__brand {
+    display: flex;
+    flex-direction: column;
+    color: var(--drawer-text);
+  }
+
+  #tv-header-{{ section.id }} .tv-drawer__title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+    line-height: 1;
+    letter-spacing: 0.06em;
+  }
+
+  #tv-header-{{ section.id }} .tv-drawer__title-small {
+    margin-top: 6px;
+    color: #a17642;
+    font-family: Arial, sans-serif;
+    font-size: 7px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.3em;
+  }
+
+  #tv-header-{{ section.id }} .tv-drawer__close {
+    display: flex;
+    width: 38px;
+    height: 38px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    border: 0;
+    background: transparent;
+
+    color: var(--drawer-text);
+    cursor: pointer;
+  }
+
+  #tv-header-{{ section.id }} .tv-drawer__close svg {
+    width: 23px;
+    height: 23px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-width: 1.6;
+  }
+
+  #tv-header-{{ section.id }} .tv-drawer__content {
+    padding: 24px 22px 40px;
+  }
+
+  /* Drawer search */
+
+  #tv-header-{{ section.id }} .tv-drawer__search {
+    display: flex;
+    width: 100%;
+    height: 50px;
+
+    margin-bottom: 28px;
+
+    border: 1px solid var(--drawer-border);
+    background: #fffaf2;
+  }
+
+  #tv-header-{{ section.id }} .tv-drawer__search input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+
+    padding: 0 14px;
+
+    border: 0;
+    outline: 0;
+    background: transparent;
+
+    color: var(--drawer-text);
+
+    font-family: inherit;
+    font-size: 16px;
+  }
+
+  #tv-header-{{ section.id }} .tv-drawer__search input::placeholder {
+    color: #94877c;
+  }
+
+  #tv-header-{{ section.id }} .tv-drawer__search button {
+    display: flex;
+    width: 50px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    border: 0;
+
+    background: var(--header-bg);
+    color: var(--header-text);
+
+    cursor: pointer;
+  }
+
+  #tv-header-{{ section.id }} .tv-drawer__search button:hover {
+    background: #3a251c;
+    color: var(--accent);
+  }
+
+  #tv-header-{{ section.id }} .tv-drawer__search svg {
+    width: 19px;
+    height: 19px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+  }
+
+  /* Drawer links */
+
+  #tv-header-{{ section.id }} .tv-drawer__links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  #tv-header-{{ section.id }} .tv-drawer__links li {
+    border-bottom: 1px solid var(--drawer-border);
+  }
+
+  #tv-header-{{ section.id }} .tv-drawer__links a {
+    display: flex;
+    min-height: 56px;
+
+    align-items: center;
+    justify-content: space-between;
+
+    color: var(--drawer-text);
+
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+      color 0.2s ease,
+      padding-left 0.2s ease;
+  }
+
+  #tv-header-{{ section.id }} .tv-drawer__links a::after {
+    content: "→";
+
+    color: #9b8064;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  #tv-header-{{ section.id }} .tv-drawer__links a:hover {
+    padding-left: 4px;
+    color: #8a6234;
+  }
+
+  /* Drawer account */
+
+  #tv-header-{{ section.id }} .tv-drawer__account {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 28px;
+
+    color: var(--drawer-muted);
+
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  #tv-header-{{ section.id }} .tv-drawer__account svg {
+    width: 20px;
+    height: 20px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+  }
+
+  #tv-header-{{ section.id }} .tv-drawer__account:hover {
+    color: #8a6234;
+  }
+
+  /* =====================================================
+     TABLET
+  ===================================================== */
+
+  @media screen and (max-width: 990px) {
+    #tv-header-{{ section.id }} .tv-header__inner {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+    #tv-header-{{ section.id }} .tv-header__nav {
+      gap: 22px;
+    }
+  }
+
+  /* =====================================================
+     MOBILE
+  ===================================================== */
+
+  @media screen and (max-width: 749px) {
+    #tv-header-{{ section.id }} .tv-announcement {
+      min-height: 30px;
+      padding: 6px 12px;
+    }
+
+    #tv-header-{{ section.id }} .tv-announcement a {
+      font-size: 9px;
+      letter-spacing: 0.025em;
+    }
+
+    #tv-header-{{ section.id }} .tv-header__inner {
+      grid-template-columns: 76px 1fr 76px;
+
+      min-height: 60px;
+      padding: 0 10px;
+
+      background: transparent;
+    }
+
+    #tv-header-{{ section.id }} .tv-header__nav {
+      display: none;
+    }
+
+    #tv-header-{{ section.id }} .tv-menu-button {
+      display: inline-flex;
+      justify-self: start;
+    }
+
+    #tv-header-{{ section.id }} .tv-header__brand-name {
+      font-size: 20px;
+      letter-spacing: 0.045em;
+    }
+
+    #tv-header-{{ section.id }} .tv-header__brand-small {
+      margin-top: 5px;
+      font-size: 6px;
+      letter-spacing: 0.34em;
+    }
+
+    #tv-header-{{ section.id }} .tv-header__actions {
+      gap: 1px;
+    }
+
+    #tv-header-{{ section.id }} .tv-header__account {
+      display: none;
+    }
+
+    #tv-header-{{ section.id }} .tv-header__icon {
+      width: 36px;
+      height: 36px;
+    }
+
+    #tv-header-{{ section.id }} .tv-header__icon svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+</style>
+
+<header id="tv-header-{{ section.id }}">
+
+  <!-- Announcement bar -->
+  <div class="tv-announcement">
+    <a href="{{ routes.all_products_collection_url }}">
+      Collector Editions for Stories You’ll Never Forget
+    </a>
+  </div>
+
+  <!-- Main header -->
+  <div class="tv-header">
+    <div class="tv-header__inner">
+
+      <!-- Desktop navigation -->
+      <nav
+        class="tv-header__nav"
+        aria-label="Main navigation"
+      >
+        <a href="{{ routes.root_url }}">
+          Home
+        </a>
+
+        <a href="{{ routes.all_products_collection_url }}">
+          Shop All
+        </a>
+
+        <a href="/pages/contact">
+          Contact
+        </a>
+      </nav>
+
+      <!-- Mobile menu button -->
+      <button
+        class="tv-header__icon tv-menu-button"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        data-tv-menu-open
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 7h16"></path>
+          <path d="M4 12h16"></path>
+          <path d="M4 17h16"></path>
+        </svg>
+      </button>
+
+      <!-- Brand -->
+      <a
+        class="tv-header__brand"
+        href="{{ routes.root_url }}"
+        aria-label="Theravique Editions home"
+      >
+        <span class="tv-header__brand-name">
+          THERAVIQUE
+        </span>
+
+        <span class="tv-header__brand-small">
+          EDITIONS
+        </span>
+      </a>
+
+      <!-- Header actions -->
+      <div class="tv-header__actions">
+
+        <a
+          class="tv-header__icon"
+          href="{{ routes.search_url }}"
+          aria-label="Search"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="6.5"></circle>
+            <path d="m16 16 4 4"></path>
+          </svg>
+        </a>
+
+        <a
+          class="tv-header__icon tv-header__account"
+          href="{{ routes.account_url }}"
+          aria-label="Account"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="8" r="3.2"></circle>
+            <path d="M5.5 20c.7-4 3-6 6.5-6s5.8 2 6.5 6"></path>
+          </svg>
+        </a>
+
+        <!-- Cart: click mo cart drawer cua theme, khong co drawer thi ve /cart -->
+        <a
+          class="tv-header__icon"
+          href="{{ routes.cart_url }}"
+          aria-label="Cart"
+          data-tv-cart-open
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6.5 8.5h11l1 11h-13z"></path>
+            <path d="M9 9V6.5a3 3 0 0 1 6 0V9"></path>
+          </svg>
+
+          <span
+            class="tv-cart-count"
+            data-tv-cart-count
+            {% if cart.item_count == 0 %}hidden{% endif %}
+          >
+            {{ cart.item_count }}
+          </span>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile overlay -->
+  <div
+    class="tv-drawer-overlay"
+    data-tv-menu-close
+  ></div>
+
+  <!-- Mobile drawer -->
+  <aside
+    class="tv-drawer"
+    aria-label="Mobile navigation"
+    aria-hidden="true"
+  >
+
+    <div class="tv-drawer__top">
+
+      <div class="tv-drawer__brand">
+        <span class="tv-drawer__title">
+          THERAVIQUE
+        </span>
+
+        <span class="tv-drawer__title-small">
+          EDITIONS
+        </span>
+      </div>
+
+      <button
+        class="tv-drawer__close"
+        type="button"
+        aria-label="Close menu"
+        data-tv-menu-close
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 5l14 14"></path>
+          <path d="M19 5 5 19"></path>
+        </svg>
+      </button>
+
+    </div>
+
+    <div class="tv-drawer__content">
+
+      <!-- Mobile search -->
+      <form
+        class="tv-drawer__search"
+        action="{{ routes.search_url }}"
+        method="get"
+        role="search"
+      >
+        <input
+          type="search"
+          name="q"
+          placeholder="Search by title or series"
+          aria-label="Search"
+        >
+
+        <button
+          type="submit"
+          aria-label="Submit search"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="6.5"></circle>
+            <path d="m16 16 4 4"></path>
+          </svg>
+        </button>
+      </form>
+
+      <!-- Mobile links -->
+      <ul class="tv-drawer__links">
+
+        <li>
+          <a href="{{ routes.root_url }}">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a href="{{ routes.all_products_collection_url }}">
+            Shop All
+          </a>
+        </li>
+
+        <li>
+          <a href="/pages/contact">
+            Contact Us
+          </a>
+        </li>
+
+      </ul>
+
+      <!-- Mobile account -->
+      <a
+        class="tv-drawer__account"
+        href="{{ routes.account_url }}"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="8" r="3.2"></circle>
+          <path d="M5.5 20c.7-4 3-6 6.5-6s5.8 2 6.5 6"></path>
+        </svg>
+
+        Account & Order History
+      </a>
+
+    </div>
+  </aside>
+
+</header>
+
+<script>
+  (() => {
+    const header = document.getElementById(
+      'tv-header-{{ section.id }}'
+    );
+
+    if (!header || header.dataset.initialized === 'true') {
+      return;
+    }
+
+    header.dataset.initialized = 'true';
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    const openButton =
+      header.querySelector('[data-tv-menu-open]');
+
+    const closeButtons =
+      header.querySelectorAll('[data-tv-menu-close]');
+
+    const drawer =
+      header.querySelector('.tv-drawer');
+
+    const openMenu = () => {
+      header.classList.add('is-menu-open');
+
+      openButton?.setAttribute(
+        'aria-expanded',
+        'true'
+      );
+
+      drawer?.setAttribute(
+        'aria-hidden',
+        'false'
+      );
+
+      document.documentElement.style.overflow =
+        'hidden';
+    };
+
+    const closeMenu = () => {
+      header.classList.remove('is-menu-open');
+
+      openButton?.setAttribute(
+        'aria-expanded',
+        'false'
+      );
+
+      drawer?.setAttribute(
+        'aria-hidden',
+        'true'
+      );
+
+      document.documentElement.style.overflow =
+        '';
+    };
+
+    openButton?.addEventListener(
+      'click',
+      openMenu
+    );
+
+    closeButtons.forEach((button) => {
+      button.addEventListener(
+        'click',
+        closeMenu
+      );
+    });
+
+    document.addEventListener(
+      'keydown',
+      (event) => {
+        if (event.key === 'Escape') {
+          closeMenu();
+        }
+      }
+    );
+
+    window.addEventListener(
+      'resize',
+      () => {
+        if (window.innerWidth > 749) {
+          closeMenu();
+        }
+      }
+    );
+
+    /* =====================================================
+       CART DRAWER + LIVE BADGE
+       - Icon gio: mo cart drawer cua theme (moi kien truc:
+         Dawn <cart-drawer>, Horizon <cart-drawer-component>,
+         cart-notification). Theme khong co drawer → ve /cart.
+       - Badge: tu dong cap nhat sau moi lan cart thay doi
+         (them tu hero section, doi so luong trong drawer...).
+       - Drawer dang DONG thi tu render lai noi dung cho moi.
+    ===================================================== */
+
+    const findCartDrawer = () =>
+      document.querySelector(
+        'cart-drawer, cart-drawer-component, cart-notification'
+      );
+
+    const cartDrawerIsOpen = (el) => {
+      if (!el) return false;
+
+      if (el.hasAttribute('open')) return true;
+
+      const dialog = el.querySelector('dialog');
+      if (dialog && dialog.open) return true;
+
+      return (
+        el.classList.contains('active') ||
+        el.classList.contains('is-open') ||
+        el.classList.contains('animate')
+      );
+    };
+
+    const openCartDrawer = () => {
+      const el = findCartDrawer();
+
+      if (!el) return false;
+
+      try {
+        if (typeof el.open === 'function') {
+          el.open();
+          return true;
+        }
+
+        if (typeof el.show === 'function') {
+          el.show();
+          return true;
+        }
+
+        const dialog = el.querySelector('dialog');
+
+        if (
+          dialog &&
+          typeof dialog.showModal === 'function'
+        ) {
+          if (!dialog.open) dialog.showModal();
+          return true;
+        }
+
+        el.classList.add('animate', 'active');
+        document.body.classList.add('overflow-hidden');
+        return true;
+      } catch (error) {
+        return false;
+      }
+    };
+
+    const cartLink =
+      header.querySelector('[data-tv-cart-open]');
+
+    cartLink?.addEventListener('click', (event) => {
+      if (!findCartDrawer()) {
+        return; /* khong co drawer → di theo link /cart */
+      }
+
+      event.preventDefault();
+
+      if (!openCartDrawer()) {
+        window.location.href =
+          cartLink.getAttribute('href');
+      }
+    });
+
+    /* ---------- Badge count ---------- */
+
+    const setCartCount = (value) => {
+      const badge =
+        header.querySelector('[data-tv-cart-count]');
+
+      if (!badge) return;
+
+      const count = parseInt(value, 10) || 0;
+
+      badge.textContent = count;
+      badge.toggleAttribute('hidden', count === 0);
+    };
+
+    const refreshCartCount = () => {
+      fetch('{{ routes.cart_url }}.js', {
+        headers: { Accept: 'application/json' }
+      })
+        .then((response) => response.json())
+        .then((cart) => {
+          if (cart && typeof cart.item_count !== 'undefined') {
+            setCartCount(cart.item_count);
+          }
+        })
+        .catch(() => {});
+    };
+
+    /* ---------- Lam moi noi dung drawer khi dang dong ---------- */
+
+    const refreshDrawerSection = () => {
+      const el = findCartDrawer();
+
+      if (!el || cartDrawerIsOpen(el)) return;
+
+      const wrapper =
+        el.closest('[id^="shopify-section-"]');
+
+      if (!wrapper) return;
+
+      const sectionId =
+        wrapper.id.replace('shopify-section-', '');
+
+      fetch(
+        window.location.pathname +
+          '?sections=' +
+          encodeURIComponent(sectionId)
+      )
+        .then((response) => response.json())
+        .then((json) => {
+          const html = json && json[sectionId];
+          const target =
+            document.getElementById(wrapper.id);
+
+          /* drawer da duoc mo trong luc cho fetch → bo qua,
+             tranh thay DOM lam drawer dong lai */
+          if (
+            !html ||
+            !target ||
+            cartDrawerIsOpen(findCartDrawer())
+          ) {
+            return;
+          }
+
+          const doc = new DOMParser().parseFromString(
+            html,
+            'text/html'
+          );
+
+          const fresh =
+            doc.getElementById(wrapper.id) || doc.body;
+
+          target.innerHTML = fresh.innerHTML;
+        })
+        .catch(() => {});
+    };
+
+    /* ---------- Theo doi moi thay doi cua cart ---------- */
+
+    if (!window.__tvCartWatcher) {
+      window.__tvCartWatcher = true;
+
+      const originalFetch = window.fetch;
+
+      window.fetch = function () {
+        let url = '';
+
+        try {
+          url =
+            typeof arguments[0] === 'string'
+              ? arguments[0]
+              : (arguments[0] && arguments[0].url) || '';
+        } catch (error) {
+          url = '';
+        }
+
+        const result =
+          originalFetch.apply(this, arguments);
+
+        if (/\/cart\/(add|change|update|clear)/.test(url)) {
+          result
+            .then((response) => {
+              if (response && response.ok) {
+                refreshCartCount();
+                refreshDrawerSection();
+              }
+            })
+            .catch(() => {});
+        }
+
+        return result;
+      };
+    }
+
+    ['cart:update', 'cart:updated', 'cart:refresh'].forEach(
+      (name) => {
+        document.addEventListener(name, refreshCartCount);
+      }
+    );
+
+    /* Quay lai tu trang khac (bfcache) van dung so luong */
+    window.addEventListener('pageshow', refreshCartCount);
+  })();
+</script>

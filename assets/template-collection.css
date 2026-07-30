@@ -1,0 +1,192 @@
+@media screen and (max-width: 749px) {
+  .collection .grid__item:only-child {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .collection .slider.slider--tablet {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.collection .loading-overlay {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  padding: 0 1.5rem;
+  opacity: 0.7;
+}
+
+@media screen and (min-width: 750px) {
+  .collection .loading-overlay {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+.collection.loading .loading-overlay {
+  display: block;
+}
+
+.collection--empty .title-wrapper {
+  margin-top: 10rem;
+  margin-bottom: 15rem;
+}
+
+@media screen and (max-width: 989px) {
+  .collection .slider--tablet.product-grid {
+    scroll-padding-left: 1.5rem;
+  }
+}
+
+.collection__description > * {
+  margin: 0;
+}
+
+.collection__title.title-wrapper {
+  margin-bottom: 2.5rem;
+}
+
+.collection__title .title:not(:only-child) {
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 990px) {
+  .collection__title--desktop-slider .title {
+    margin-bottom: 2.5rem;
+  }
+
+  .collection__title.title-wrapper--self-padded-tablet-down {
+    padding: 0 5rem;
+  }
+
+  .collection slider-component:not(.page-width-desktop) {
+    padding: 0;
+  }
+
+  .collection--full-width slider-component:not(.slider-component-desktop) {
+    padding: 0 1.5rem;
+    max-width: none;
+  }
+}
+
+.collection__view-all a:not(.link) {
+  margin-top: 1rem;
+}
+
+
+/* =====================================================
+   THERAVIQUE — SHOP ALL PRODUCT CARD STYLE
+   Warm caramel palette
+===================================================== */
+
+/* Tên sản phẩm */
+.collection .card__heading,
+.collection .card__heading a,
+.collection .card-information__text,
+.collection .product-card-wrapper .card__heading a {
+  color: #2a211c !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+/* Khi rê chuột vào tên sản phẩm */
+.collection .card__heading a:hover,
+.collection .product-card-wrapper .card__heading a:hover {
+  color: #b88743 !important;
+}
+
+/* Khoảng cách giữa tên và giá */
+.collection .card-information .price,
+.collection .product-card-wrapper .price {
+  margin-top: 7px !important;
+}
+
+/* Giá bán hiện tại khi đang giảm */
+.collection .price--on-sale .price-item--sale,
+.collection .price__sale .price-item--last,
+.collection .price-item.price-item--sale {
+  color: #b88743 !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.01em !important;
+}
+
+/* Giá bình thường khi sản phẩm không giảm */
+.collection
+  .price:not(.price--on-sale)
+  .price-item--regular {
+  color: #b88743 !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+}
+
+/* Giá gạch */
+.collection
+  .price--on-sale
+  .price-item--regular,
+.collection .price__compare-at,
+.collection s.price-item {
+  color: #aaa096 !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+  opacity: 1 !important;
+  text-decoration-line: line-through !important;
+  text-decoration-color: #aaa096 !important;
+  text-decoration-thickness: 1px !important;
+}
+
+/* Căn giá bán và giá gạch trên cùng một hàng */
+.collection .price__sale {
+  display: flex !important;
+  align-items: baseline !important;
+  flex-wrap: wrap !important;
+  gap: 7px !important;
+}
+
+/* Giữ phần thông tin sản phẩm gọn gàng */
+.collection .card-information {
+  padding-top: 8px !important;
+}
+
+/* Mobile */
+@media screen and (max-width: 749px) {
+  .collection .card__heading,
+  .collection .card__heading a,
+  .collection .product-card-wrapper .card__heading a {
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+  }
+
+  .collection .price--on-sale .price-item--sale,
+  .collection .price__sale .price-item--last,
+  .collection
+    .price:not(.price--on-sale)
+    .price-item--regular {
+    font-size: 15px !important;
+  }
+
+  .collection
+    .price--on-sale
+    .price-item--regular,
+  .collection .price__compare-at,
+  .collection s.price-item {
+    font-size: 12px !important;
+  }
+
+  .collection .price__sale {
+    gap: 6px !important;
+  }
+}
